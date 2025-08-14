@@ -4,7 +4,7 @@ import { Footer } from './ui/footer';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Input } from './ui/input';
-import { Badge } from '@ui/badge';
+import { Badge } from './ui/badge';
 
 export default function App() {
   const buttonCode = `<Button>Primary</Button>`;
