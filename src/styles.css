@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+:root { /* tokens unchanged */ }
+.dark  { /* tokens unchanged */ }
+:root { --bg: 255 255 255; }   /* change this */
+body { @apply bg-bg text-fg; }
+
+html, body, #root { height: 100%; }
+/* Use CSS directly instead of Tailwind utilities here */
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--fg));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
