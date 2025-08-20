@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import hexagon from "../public/images/hexagon.svg";
 import logo from "../public/images/logo.png";
 
+
 export default function Home() {
     return (
-        <div className={`h-full flex flex-col mt-5 md:mt-10 gap-5 z-50 relative bg-black`}>
+        <div className={`min-h-screen flex flex-col mt-5 md:mt-10 gap-5 z-50 relative bg-black`}>
             <h1 className="text-2xl sm:text-4xl md:text-5xl text-white text-center leading-[140%] md:leading-[120%]">
                 Doxa Innovations <br />
                 <strong className="text-white text-2xl sm:text-4xl md:text-5xl">
