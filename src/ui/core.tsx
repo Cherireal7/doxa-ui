@@ -8,6 +8,7 @@ const sizeClasses: Record<ButtonSize, string> = {
 	md: 'h-10 px-4 text-sm',
 	lg: 'h-12 px-5 text-base',
 };
+
 const variantClasses: Record<ButtonVariant, string> = {
 	primary: 'bg-indigo-600 text-white hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400',
 	secondary: 'bg-zinc-800 text-white hover:bg-zinc-700 dark:bg-zinc-700 dark:hover:bg-zinc-600',
