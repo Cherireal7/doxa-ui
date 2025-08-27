@@ -12,3 +12,31 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+:root {
+  /* base */
+  --background: 227 45% 9%;   /* #0b1220 */
+  --foreground: 0 0% 100%;    /* white */
+  --border: 0 0% 100% / 0.12; /* subtle white border */
+
+  /* brand tokens */
+  --primary: 217 91% 60%;              /* blue-500/600 vibe */
+  --primary-foreground: 0 0% 100%;
+
+  --danger: 0 84% 60%;                 /* red-500/600 */
+  --danger-foreground: 0 0% 100%;
+
+  --warning: 42 96% 56%;               /* amber-400/500 */
+  --warning-foreground: 220 13% 12%;   /* near-slate-900 */
+
+  --success: 158 64% 45%;              /* emerald-500 */
+  --success-foreground: 220 13% 12%;
+}
+
+/* optional dark tweaks */
+.dark {
+  --background: 227 45% 9%;
+  --foreground: 0 0% 100%;
+  --border: 0 0% 100% / 0.12;
+}
+
