@@ -50,7 +50,7 @@ function CopyButton({ text }: { text: string }) {
 /* ---------- CodeBlock (presentational, no internal copy) ---------- */
 function CodeBlock({ code }: { code: string }) {
 	return (
-		<div className="relative isolate overflow-hidden rounded-2xl border border-purple-400/30 bg-purple-500/15 backdrop-blur-xl shadow-[0_0_0_1px_rgba(168,85,247,0.25)]">
+		<div className="relative isolate overflow-hidden rounded-2xl border border-white/10 bg-black backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,0.06)]">
 			<div className="pointer-events-none absolute -inset-16 -z-10 bg-[radial-gradient(420px_200px_at_20%_0%,rgba(168,85,247,0.25),transparent_60%),radial-gradient(300px_160px_at_90%_20%,rgba(147,51,234,0.22),transparent_60%)] blur-3xl" />
 			<pre className="relative z-0 m-0 max-w-full overflow-y-auto overflow-x-hidden p-4 text-xs text-white">
         <code className="font-mono whitespace-pre-wrap break-words">{code}</code>
@@ -136,6 +136,74 @@ export default function CorePage() {
 		},
 	] as const;
 
+	// Gradient buttons (outer button + inner span)
+	const gradientButtons = [
+		{
+			id: 'grad-purple-blue',
+			title: 'Purple → Blue',
+			label: 'Purple to blue',
+			outer:
+				'relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800',
+			inner:
+				'relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent',
+		},
+		{
+			id: 'grad-cyan-blue',
+			title: 'Cyan → Blue',
+			label: 'Cyan to blue',
+			outer:
+				'relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800',
+			inner:
+				'relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent',
+		},
+		{
+			id: 'grad-green-blue',
+			title: 'Green → Blue',
+			label: 'Green to blue',
+			outer:
+				'relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800',
+			inner:
+				'relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent',
+		},
+		{
+			id: 'grad-purple-pink',
+			title: 'Purple → Pink',
+			label: 'Purple to pink',
+			outer:
+				'relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800',
+			inner:
+				'relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent',
+		},
+		{
+			id: 'grad-pink-orange',
+			title: 'Pink → Orange',
+			label: 'Pink to orange',
+			outer:
+				'relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800',
+			inner:
+				'relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent',
+		},
+		{
+			id: 'grad-teal-lime',
+			title: 'Teal → Lime',
+			label: 'Teal to Lime',
+			outer:
+				'relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800',
+			inner:
+				'relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent',
+		},
+		{
+			id: 'grad-red-yellow',
+			title: 'Red → Yellow',
+			label: 'Red to Yellow',
+			outer:
+				'relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400',
+			inner:
+				'relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent',
+		},
+	] as const;
+
+
 	return (
 		<main className="min-h-screen bg-[#0b1220] text-white">
 			<div className="mx-auto max-w-6xl px-4 py-10">
@@ -181,6 +249,34 @@ export default function CorePage() {
 						);
 					})}
 				</div>
+
+				{/* Gradient Buttons (preview + code + copy) */}
+				<h2 className="text-xl font-semibold mb-4">Gradient Buttons</h2>
+				<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10">
+					{gradientButtons.map((btn) => {
+						const snippet = `<button class="${btn.outer}"><span class="${btn.inner}">${btn.label}</span></button>`;
+						return (
+							<div
+								key={btn.id}
+								className="rounded-2xl border border-purple-400/30 bg-purple-500/15 p-4 backdrop-blur-xl shadow-[0_0_0_1px_rgba(168,85,247,0.25)]"
+							>
+								<div className="mb-3 flex items-center justify-between">
+									<span className="text-sm text-zinc-300/80">{btn.title}</span>
+									<CopyButton text={snippet} />
+								</div>
+								<div className="mb-4">
+									<button className={btn.outer}>
+										<span className={btn.inner}>{btn.label}</span>
+									</button>
+								</div>
+								<CodeBlock code={snippet} />
+							</div>
+						);
+					})}
+				</div>
+
+
+
 			</div>
 		</main>
 	);
